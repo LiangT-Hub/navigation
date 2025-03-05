@@ -1,6 +1,17 @@
 # navigation
  navigation注释版_V1.0
 
+## 模块
+
+
+### 调用逻辑
+1、首先在move_base_node.cpp中，初始tf2_ros::Buffer类，存储静态变换的数据，然后调用tf2_ros::TransformListener类，订阅tf2_ros::Buffer类中的数据。
+2、move_base的业务逻辑主要在move_base::MoveBase中，初始化一个move_base对象，并将buffer以参数传入
+
+* 规划线程函数 planThread
+* 动作服务器回调函数 executeCb
+* 目标订阅回调函数 goalCB
+
 ### Costmap 代价地图
 #### costmap_comon_params.yaml
 ```YAML
@@ -170,3 +181,9 @@ DWAPlannerROS:
 
   holonomic_robot: false	# 是否为全向机器人
 ```
+
+
+## 知识点
+
+
+### ROS中actionlib机制

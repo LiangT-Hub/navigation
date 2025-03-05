@@ -96,8 +96,7 @@ namespace move_base {
     controller_plan_ = new std::vector<geometry_msgs::PoseStamped>();
 
     //set up the planner's thread
-//    # TODO boost库
-    // 设置规划器线程
+    // TODO:启动规划器线程
     planner_thread_ = new boost::thread(boost::bind(&MoveBase::planThread, this));
     /*
      *MoveBase::planThread()函数是planner线程的入口。这个函数需要等待actionlib服务器的cbMoveBase::executeCb来唤醒启动。

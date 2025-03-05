@@ -31,9 +31,9 @@
 #include <tf2_ros/transform_listener.h>
 
 int main(int argc, char** argv){
-  ros::init(argc, argv, "move_base_node");
-  tf2_ros::Buffer buffer(ros::Duration(10));
-  tf2_ros::TransformListener tf(buffer);
+  ros::init(argc, argv, "move_base_node");    //  初始化ROS节点 
+  tf2_ros::Buffer buffer(ros::Duration(10));    //  //  tf2_ros::Buffer类，用于存储和管理坐标变换信息
+  tf2_ros::TransformListener tf(buffer);        //  tf2_ros::TransformListener类，用于订阅并解析坐标变换信息
 
   move_base::MoveBase move_base( buffer );
 

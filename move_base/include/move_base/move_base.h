@@ -65,9 +65,9 @@ namespace move_base {
   typedef actionlib::SimpleActionServer<move_base_msgs::MoveBaseAction> MoveBaseActionServer;
   // 枚举类型，表示不同的状态：规划、控制、清除
   enum MoveBaseState {
-    PLANNING,
-    CONTROLLING,
-    CLEARING
+    PLANNING, // 规划状态
+    CONTROLLING,  // 控制状态
+    CLEARING  // 清除状态
   };
   // 恢复行为
   enum RecoveryTrigger
@@ -182,7 +182,7 @@ namespace move_base {
        */
       void wakePlanner(const ros::TimerEvent& event);
 
-      tf2_ros::Buffer& tf_;
+      tf2_ros::Buffer& tf_;  
 
       MoveBaseActionServer* as_;
 
